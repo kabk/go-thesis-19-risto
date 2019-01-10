@@ -6,20 +6,16 @@
 
 
 	<style type="text/css">	
+    body,
+	  #content { 
+      background-color: LightGrey
+    }
+  </style>
 
-
-	#content { background-color: LightGrey }
-
-
-
-
-
-
-	</style>
 	<title>Page Title</title>
 	</head>
 <body>
-	<div id="content">
+	<div class="content first" id='first'>
 		<h1>Archives of the North</h1>
 		<h2>Abstract</h2>
 		<p>In my thesis, I’m looking for possible tools for the Sami to render themselves visible. Sami people have formerly faced systemic oppression. They have been made invisible. Their bodies have been racialised, examined, scaled and measured. Fennoscandian countries Norway, Sweden and Finland tried to suppress the Sami voice. The nation states tried to silence the Sami language, and silence their drum.</p>
@@ -170,154 +166,75 @@
 
 		Personal discussions Füsun Turetken, architect, designer and visual artist <br>
 
-Personal discussions Laura Savolainen, social scientist <br>
+    Personal discussions Laura Savolainen, social scientist <br>
 
-Personal discussion Peter Bilak, multiscript type designer, writer and teacher <br>
+    Personal discussion Peter Bilak, multiscript type designer, writer and teacher <br>
 
-Personal discussion Sami Kortemäki, type designer who has designed for Sami languages <br>
+    Personal discussion Sami Kortemäki, type designer who has designed for Sami languages <br>
 
-Personal discussion Frank Griesshammer, type designer and educator<br>
+    Personal discussion Frank Griesshammer, type designer and educator<br>
 
-Personal discussion Anni Guttorm, curator at Sami Museum Siida in Inari, Finland<br>
+    Personal discussion Anni Guttorm, curator at Sami Museum Siida in Inari, Finland<br>
 
-Personal discussion Hannu Kangasniemi, Secretary for study materials at the Sami Parliament, Finland<br>
+    Personal discussion Hannu Kangasniemi, Secretary for study materials at the Sami Parliament, Finland<br>
 
-Personal discussion David Bennewith, type design researcher, graphic designer & educator<br>
+    Personal discussion David Bennewith, type design researcher, graphic designer & educator<br>
 
-Personal discussion Eino Koponen, Skolt Sami Linguist at Oulu University, Finland<br>
+    Personal discussion Eino Koponen, Skolt Sami Linguist at Oulu University, Finland<br>
 
-Lectures Peter Bilak, Type & Language at TypeMedia 2018-2019<br>
+    Lectures Peter Bilak, Type & Language at TypeMedia 2018-2019<br>
 
-Franke, A. (Ed.). (2010). Animism (Vol. 1). Sternberg.<br>
+    Franke, A. (Ed.). (2010). Animism (Vol. 1). Sternberg.<br>
 
-Miller, A. S. (2013). Speculative grace: Bruno Latour and object-oriented theology. Oxford University Press.<br>
+    Miller, A. S. (2013). Speculative grace: Bruno Latour and object-oriented theology. Oxford University Press.<br>
 
-Shlain, L. (1999). The alphabet versus the goddess: The conflict between word and image. Penguin.<br>
+    Shlain, L. (1999). The alphabet versus the goddess: The conflict between word and image. Penguin.<br>
 
-http://www.decolonisingdesign.com/guest-contributions/2017/guest-post-this-was-written-on-stolen-indigenous-land/<br>
+    http://www.decolonisingdesign.com/guest-contributions/2017/guest-post-this-was-written-on-stolen-indigenous-land/<br>
 
-Sekula, A. (1986). The body and the archive. October, 39, 3-64.<br>
+    Sekula, A. (1986). The body and the archive. October, 39, 3-64.<br>
 
-Soloway, J. The Female Gaze. Topple Productions, LLC.<br>
+    Soloway, J. The Female Gaze. Topple Productions, LLC.<br>
 
-Duarte, M. E. (2013). Network sovereignty: understanding the implications of tribal broadband networks (Doctoral dissertation).<br>
+    Duarte, M. E. (2013). Network sovereignty: understanding the implications of tribal broadband networks (Doctoral dissertation).<br>
 
-Bennewith, D. (2018). Approaches to the Design of Inuktitut Syllabics.<br>
+    Bennewith, D. (2018). Approaches to the Design of Inuktitut Syllabics.<br>
 
-Unger, G. (2018). Theory of Type Design.<br>
+    Unger, G. (2018). Theory of Type Design.<br>
 
-Taussig, M. T. (1987). Shamanism, colonialism, and the wild man: A study in terror and healing.<br>
+    Taussig, M. T. (1987). Shamanism, colonialism, and the wild man: A study in terror and healing.<br>
 
-Spivak, G. C. (1988). Can the subaltern speak?. Can the subaltern speak? Reflections on the history of an idea, 21-78.<br>
+    Spivak, G. C. (1988). Can the subaltern speak?. Can the subaltern speak? Reflections on the history of an idea, 21-78.<br>
 
-Attia, K. 2013, Repair: Architecture, Reappropriation, and The Body Repaired<br>
+    Attia, K. 2013, Repair: Architecture, Reappropriation, and The Body Repaired<br>
 
 	</div>
 
 		<script>
-			$("#content").clone().appendTo("body");
+      const divHeight = $('#first').height();
 
-			$("#content").clone().appendTo("body");
+      function initialize() {
+        console.log('initialize');
+        $("#first").clone().removeAttr('id').removeClass('first').addClass('last').appendTo("body");
+        // $("#first").clone().removeAttr('id').removeClass('first').addClass('main').appendTo("body");
+        window.scrollTo(0, 0);
+        window.addEventListener('scroll', scrollHandler);
+      }
 
-			$("#content").clone().appendTo("body");
+      function scrollHandler () {
+        console.log('scrolling');
+        // how far the user has scrolled so far on the page
+        const scrolled = window.innerHeight + window.scrollY;
+        // // height of the document
+        const documentHeight = document.body.offsetHeight;
+        // // the amount of distance in pixels needed from the bottom of the page before the page scrolls to the top
+        const offset = 100;
+        console.log(scrolled, documentHeight)
+        if (offset + scrolled >= documentHeight)
+          window.scrollTo(0, divHeight - window.innerHeight - offset);
+      }
 
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-			$("#content").clone().appendTo("body");
-
-
-
-
-
-
-
-
+      initialize();
 
 		</script>
 
