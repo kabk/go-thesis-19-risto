@@ -42,6 +42,12 @@
       font-family: 'Serapion', serif;
   }
 
+  img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
 
   #header {
     /* width: 100vw !important;
